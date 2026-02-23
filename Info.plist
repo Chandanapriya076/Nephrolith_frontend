@@ -2,57 +2,39 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-
-    <!-- Camera -->
-    <key>NSCameraUsageDescription</key>
-    <string>We need access to your camera to capture CT scan images for kidney stone detection.</string>
-
-    <!-- Photo Library -->
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>We need access to your photo library to select CT scan images for analysis.</string>
-
-    <key>NSCameraReactionEffectGesturesEnabledDefault</key>
-    <false/>
-
-    <!-- 🚨 App Transport Security for Non-HTTPS Server -->
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <!-- Allow insecure HTTP for specific backend servers -->
-        <key>NSExceptionDomains</key>
-        <dict>
-            <!-- Your primary backend server -->
-            <key>180.235.121.253</key>
-            <dict>
-                <key>NSExceptionAllowsInsecureHTTPLoads</key>
-                <true/>
-                <key>NSIncludesSubdomains</key>
-                <false/>
-                <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-                <true/>
-                <key>NSTemporaryExceptionMinimumTLSVersion</key>
-                <string>TLSv1.0</string>
-            </dict>
-
-            <!-- Secondary/Backup server (if needed) -->
-            <key>14.139.187.229</key>
-            <dict>
-                <key>NSExceptionAllowsInsecureHTTPLoads</key>
-                <true/>
-                <key>NSIncludesSubdomains</key>
-                <false/>
-                <key>NSTemporaryExceptionAllowsInsecureHTTPLoads</key>
-                <true/>
-                <key>NSTemporaryExceptionMinimumTLSVersion</key>
-                <string>TLSv1.0</string>
-            </dict>
-        </dict>
-    </dict>
-
-    <!-- (Optional) Uncomment ONLY for development/testing - NOT recommended for production -->
-    <!--
-    <key>NSAllowsArbitraryLoads</key>
-    <true/>
-    -->
-
+	<key>AvailableLibraries</key>
+	<array>
+		<dict>
+			<key>LibraryIdentifier</key>
+			<string>ios-arm64_x86_64-simulator</string>
+			<key>LibraryPath</key>
+			<string>TensorFlowLiteC.framework</string>
+			<key>SupportedArchitectures</key>
+			<array>
+				<string>arm64</string>
+				<string>x86_64</string>
+			</array>
+			<key>SupportedPlatform</key>
+			<string>ios</string>
+			<key>SupportedPlatformVariant</key>
+			<string>simulator</string>
+		</dict>
+		<dict>
+			<key>LibraryIdentifier</key>
+			<string>ios-arm64</string>
+			<key>LibraryPath</key>
+			<string>TensorFlowLiteC.framework</string>
+			<key>SupportedArchitectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>SupportedPlatform</key>
+			<string>ios</string>
+		</dict>
+	</array>
+	<key>CFBundlePackageType</key>
+	<string>XFWK</string>
+	<key>XCFrameworkFormatVersion</key>
+	<string>1.0</string>
 </dict>
 </plist>
