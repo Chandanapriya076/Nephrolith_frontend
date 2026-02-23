@@ -1,0 +1,6 @@
+framework module Pods_RenalCalculi {
+  umbrella header "Pods-RenalCalculi-umbrella.h"
+
+  export *
+  module * { export * }
+}
